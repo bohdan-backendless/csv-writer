@@ -21,7 +21,15 @@ export abstract class FieldStringifier {
     }
 
     protected quoteField(field: string): string {
-        return `"${field.replace(/"/g, '""')}"`;
+        if (Number.isNaN(Number(field))) {
+            if ( field === 'true' || field === 'false' || field === 'null') {
+                return field;
+            }
+
+            return `"${field.replace(/"/g, '""')}"`;
+        }
+
+        return field;
     }
 }
 

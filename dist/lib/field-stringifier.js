@@ -63,7 +63,7 @@ var ForceQuoteFieldStringifier = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ForceQuoteFieldStringifier.prototype.stringify = function (value) {
-        return this.isEmpty(value) ? '' : this.quoteField(String(value));
+        return this.isEmpty(value) ? 'null' : this.quoteField(String(value));
     };
     return ForceQuoteFieldStringifier;
 }(FieldStringifier));
